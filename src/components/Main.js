@@ -12,6 +12,7 @@ class Main extends Component {
         this.state = {
             satInfo: null,
             setting: null,
+            satList: null,
             isLoadingList: false,
         }
     }
@@ -50,8 +51,11 @@ class Main extends Component {
             })
     }
 
-    showMap = (satList) => {
-        console.log(satList);
+    showMap = (selected) => {
+        this.setState(preState => ({
+            ...preState,
+            satList: [...selected]
+        }))
     }
 
     render() {
@@ -65,7 +69,9 @@ class Main extends Component {
                     ></SatelliteList>
                 </div>
                 <div className="right-side">
-                    <WorldMap></WorldMap>
+                    <WorldMap satData={this.state.satList}
+                              observerData={this.state.setting}
+                    ></WorldMap>
                 </div>
             </div>
         );

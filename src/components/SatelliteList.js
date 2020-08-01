@@ -45,8 +45,6 @@ class SatelliteList extends Component {
     }
 
     onChange = e => {
-        console.log(e.target);
-
         const { dataInfo, checked } = e.target;
         const { selected } = this.state;
 

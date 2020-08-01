@@ -87,31 +87,30 @@ class SatSetting extends Component {
         );
     }
 
-    onChangeLat(value) {
+    onChangeLong = (value) => {
         this.setState({
-            observeLat: value
+            observerLong: value
         })
     }
 
-    onChangeLon(value) {
+    onChangeLat = (value) => {
         this.setState({
-            observeLon: value
+            observerLat: value
         })
     }
 
-    onChangeEle(value) {
+    onChangeEle = (value) => {
         this.setState({
-            observeElevation: value
+            observerElevation: value
+        })
+    }
+    onChangeAlt = (value) => {
+        this.setState({
+            satAlt: Number(90 - +value)
         })
     }
 
-    onChangeAlt(value) {
-        this.setState({
-            satAlt: 90 - +value
-        })
-    }
-
-    onDurationChange(value) {
+    onDurationChange = (value) => {
         this.setState({
             duration: value
         })
